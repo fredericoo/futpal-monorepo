@@ -1,0 +1,42 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "check": "tsc",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@zodios/core": "^10.8.1",
+    "api": "workspace:*",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "parse-nested-form-data": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "sort-by": "^1.2.0",
+    "ts-pattern": "^4.2.2",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.2",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  }
+}

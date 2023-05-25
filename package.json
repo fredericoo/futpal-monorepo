@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "check": "turbo run check",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "eslint": "^8.41.0",
+    "eslint-config-custom": "workspace:*",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.5.1",
+    "turbo": "^1.9.7"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.{ts,tsx,js,jsx,css,scss,md,json,yml}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@7.15.0",
+  "name": "futpal-monorepo"
+}
