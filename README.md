@@ -4,7 +4,7 @@ This repository contains the source code for the Futpal 2.0 app.
 
 ## Fullstack Web + Native
 
-This app is spun up using Remix as a full-stack framework. It also makes use of Capacitor to build native apps for iOS and Android embedding a web view inside the respective apps. We develop once and ship to all three platforms.
+This app is spun up using Vite + Express. It also makes use of Capacitor to build native apps for iOS and Android embedding a web view inside the respective apps. We develop once and ship to all three platforms.
 
 ## Getting Started
 
@@ -55,12 +55,7 @@ This app is spun up using Remix as a full-stack framework. It also makes use of 
   pnpm db:migrate
   ```
 - Seed the database with randomised data
-
   ```bash
-
-  need to run "pnpm db:migrate"
-  need to run "pnpm prisma generate"
-  make sure env file is included
   pnpm db:seed
   ```
 

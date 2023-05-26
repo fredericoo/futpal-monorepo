@@ -1,4 +1,4 @@
-import { withSwaggerDocs } from "@/lib/docs/swagger-docs";
+import { withSwaggerDocs } from "@/domains/docs/docs.swagger";
 import { ctx } from "@/router/authenticated/router";
 import { api } from "api";
 import cors from "cors";
@@ -14,20 +14,8 @@ const app = ctx.app(api);
 app.use(cors(options));
 
 app.get("/games", async (req, res) => {
-  res.json({ name: "yo, let’s go!" });
+  res.json({ name: "Freddie" });
 });
-
-// app.get("/users/:id", (req, res) => {
-//   const id = req.params.id;
-//   if (id === "1") {
-//     res.json({
-//       id: 1,
-//       name: "John",
-//     });
-//   } else {
-//     res.status(404).json({ code: "not_found", message: "User not found" });
-//   }
-// });
 
 withSwaggerDocs(app, api);
 

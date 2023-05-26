@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -- nodemon"
+    "dev": "dotenv -- nodemon",
+    "lint": "eslint --max-warnings 0 --fix && tsc"
   },
   "nodemonConfig": {
     "watch": [

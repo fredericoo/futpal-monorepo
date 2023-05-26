@@ -1,4 +1,4 @@
-import { ContextSchema } from "@/lib/type-utils";
+import { ContextSchema } from "@/domains/common/common.utils";
 import {
   zodiosContext,
   ZodiosRouterContextRequestHandler,

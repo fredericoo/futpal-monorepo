@@ -70,6 +70,6 @@
     },
     "useUnknownInCatchVariables": false
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "./.eslintrc.cjs"],
   "exclude": ["src/public/"]
 }

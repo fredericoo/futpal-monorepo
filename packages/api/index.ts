@@ -1,5 +1,6 @@
 import { makeApi } from "@zodios/core";
 import z from "zod";
+
 import { errors } from "./errors";
 
 export const api = makeApi([

@@ -1,10 +1,7 @@
-/** Agressively checks if object has a property and mutates object’s type */
-export function objHas<K extends PropertyKey>(
-  obj: object,
-  prop: K
-): obj is Record<K, unknown> {
-  return prop in obj;
-}
+export const isInstanceOf =
+  <T>(constructor: new (...args: any[]) => T) =>
+  (value: unknown): value is T =>
+    value instanceof constructor;
 
 /** Function that asserts a key is within an object and mutate key’s type.  */
 export function isKeyIn<O extends object>(
