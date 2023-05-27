@@ -1,5 +1,4 @@
 module.exports = {
-  env: { browser: true, es2020: true },
   extends: [
     "turbo",
     "prettier",
@@ -17,18 +16,27 @@ module.exports = {
     "simple-import-sort",
     "@typescript-eslint",
   ],
-  settings: {
-    "import/resolver": {
-      typescript: true,
-      node: true,
-    },
-  },
+  
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: true,
     tsconfigRootDir: __dirname,
   },
+  settings: {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": ["tsconfig.json", "packages/*/tsconfig.json", "apps/*/tsconfig.json"]
+      },
+      "node": {
+        "project": ["tsconfig.json", "packages/*/tsconfig.json", "apps/*/tsconfig.json"]
+      }
+    }
+  },
+  
   rules: {
     /** No absolute imports */
     "import/no-absolute-path": "error",
@@ -54,7 +62,8 @@ module.exports = {
       },
     ],
     "unused-imports/no-unused-imports": "error",
-
+    "@typescript-eslint/no-misused-promises": "off",
+    
     "no-restricted-syntax": [
       "warn",
       {

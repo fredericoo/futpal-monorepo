@@ -9,7 +9,6 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "@remix-run/eslint-config": "^1.16.1",
     "@turbo/gen": "^1.9.7",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",

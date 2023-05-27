@@ -2,6 +2,10 @@
   "extends": "tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
@@ -13,12 +17,7 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "jsx": "react-jsx"
   },
 
   "noEmit": true,

@@ -1,7 +1,9 @@
 export const isInstanceOf =
-  <T>(constructor: new (...args: any[]) => T) =>
-  (value: unknown): value is T =>
-    value instanceof constructor;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+    <T>(constructor: new (...args: any[]) => T) =>
+    (value: unknown): value is T =>
+      value instanceof constructor;
 
 /** Function that asserts a key is within an object and mutate key’s type.  */
 export function isKeyIn<O extends object>(

@@ -1,9 +1,8 @@
-import { ContextSchema } from "@/domains/common/common.utils";
-import {
-  zodiosContext,
-  ZodiosRouterContextRequestHandler,
-} from "@zodios/express";
+import type { ZodiosRouterContextRequestHandler } from "@zodios/express";
+import { zodiosContext } from "@zodios/express";
 import { z } from "zod";
+
+import type { ContextSchema } from "~/domains/common/common.utils";
 
 export const ctx = zodiosContext(
   z.object({

@@ -1,18 +1,12 @@
-import { ZodiosEndpointDefinitions } from "@zodios/core";
-import { ZodiosApp } from "@zodios/express";
+import type { ZodiosEndpointDefinitions } from "@zodios/core";
+import type { ZodiosApp } from "@zodios/express";
 import { openApiBuilder } from "@zodios/openapi";
-import { setup, serve as swagger } from "swagger-ui-express";
-import { UnknownKeysParam, ZodObject, ZodTypeAny } from "zod";
+import { serve as swagger, setup } from "swagger-ui-express";
+import type { AnyZodObject } from "zod";
 
-export const withSwaggerDocs = <
+export const autoGenSwaggerDocs = <
   TApi extends ZodiosEndpointDefinitions,
-  TContext extends ZodObject<
-    any,
-    UnknownKeysParam,
-    ZodTypeAny,
-    { [x: string]: any },
-    { [x: string]: any }
-  >
+  TContext extends AnyZodObject
 >(
   app: ZodiosApp<TApi, TContext>,
   api: TApi
