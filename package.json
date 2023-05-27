@@ -16,6 +16,9 @@
     "turbo": "^1.9.7"
   },
   "lint-staged": {
+    "*.{ts,tsx}": [
+      "turbo lint"
+    ],
     "*.{ts,tsx,js,jsx,css,scss,md,json,yml}": [
       "prettier --write"
     ]

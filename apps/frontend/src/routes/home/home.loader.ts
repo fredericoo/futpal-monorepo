@@ -1,8 +1,8 @@
 import { client } from "~/domains/api/api.client";
-import { makeLoader } from "~/domains/routing/routing.utils";
+import { defer, makeLoader } from "~/domains/routing/routing.utils";
 
-export const homeLoader = makeLoader(async () => {
-  const test = await client.getGames();
+export const homeLoader = makeLoader(() => {
+  const test = client.getGames();
 
-  return test;
+  return defer({test});
 });

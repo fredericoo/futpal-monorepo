@@ -79,15 +79,21 @@ module.exports = {
         paths: [
           {
             name: "react-router-dom",
+            importNames: ["defer"],
+            message:
+              "Please import defer from '~/domains/routing/routing.utils' instead.",
+          },
+          {
+            name: "react-router-dom",
             importNames: ["useLoaderData"],
             message:
-              "Please import useLoaderData from '@/lib/router-utils' instead.",
+              "Please import useLoaderData from '~/domains/routing/routing.utils' instead.",
           },
           {
             name: "react-router-dom",
             importNames: ["useActionData"],
             message:
-              "Please import useActionData from '@/lib/router-utils' instead.",
+              "Please import useActionData from '~/domains/routing/routing.utils' instead.",
           },
         ],
       },
