@@ -8,7 +8,7 @@ import { isInstanceOf } from "~/domains/common/common.utils";
  * Enhance this function to handle more error types as needed.
  */
 export const getErrorMessage = (error: unknown) => {
-  match(error)
+  return match(error)
     .when(isInstanceOf(ZodError), ({ errors }) => errors[0].message)
     .with({ message: P.string }, ({ message }) => message)
     .otherwise(() => "Unknown error");
