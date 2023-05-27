@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { UserMiddleware } from "~/router/authenticated/router";
+
+import type { UserMiddleware } from "~/router/authenticated/router";
 
 const bearerTokenSchema = z.string().regex(/^Bearer .+$/);
 

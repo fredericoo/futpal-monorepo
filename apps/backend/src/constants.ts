@@ -1,4 +1,4 @@
-import { F } from "ts-toolbelt";
+import type { F } from "ts-toolbelt";
 
 const makeUserRoles = <TRoles extends string[]>(roles: F.Narrow<TRoles>) =>
   roles;

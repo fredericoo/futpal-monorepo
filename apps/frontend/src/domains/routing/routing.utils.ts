@@ -1,5 +1,6 @@
 import type { ActionFunction, LoaderFunction } from "react-router-dom";
 import {
+  defer as rrDefer,
   // eslint-disable-next-line no-restricted-imports
   useActionData as rrUseActionData,
   useLoaderData as rrUseLoaderData,
@@ -14,8 +15,6 @@ export const useLoaderData = rrUseLoaderData as <
 export const useActionData = rrUseActionData as <
   TAction extends ActionFunction
 >() => ActionData<TAction>;
-
-import { defer as rrDefer } from "react-router-dom";
 
 export declare class DeferredData<TData extends Record<string, unknown>> {
   private pendingKeysSet;

@@ -1,5 +1,7 @@
-import { P, match } from "ts-pattern";
+import { match, P } from "ts-pattern";
 import { ZodError } from "zod";
+
+import { isInstanceOf } from "~/domains/common/common.utils";
 
 /**
  * Gets first valid error message.
@@ -11,5 +13,3 @@ export const getErrorMessage = (error: unknown) => {
     .with({ message: P.string }, ({ message }) => message)
     .otherwise(() => "Unknown error");
 };
-
-import { isInstanceOf } from "~/domains/common/common.utils";

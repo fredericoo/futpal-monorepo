@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+
 import { breakpoints } from "~/domains/style/style.breakpoints";
 import { colors } from "~/domains/style/style.colors";
 import { semanticTokens } from "~/domains/style/style.semantic-tokens";

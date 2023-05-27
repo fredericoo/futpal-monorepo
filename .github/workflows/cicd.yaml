@@ -31,6 +31,9 @@ jobs:
       - name: ESLint
         run: pnpm lint
 
+      - name: Typescript
+        run: pnpm typecheck
+
   check-if-needs-deploying:
     name: Check if needs deploying
     runs-on: ubuntu-latest
@@ -49,27 +52,27 @@ jobs:
         run: npx turbo-ignore --task=build
         continue-on-error: true
 
-  deploy:
-    name: "[FE] Deploy to Staging"
-    environment: staging
-    if: needs.check-if-needs-deploying.outputs.is-cached != 'success'
-    needs: [check-if-needs-deploying]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
+  # deploy:
+  #   name: "[FE] Deploy to Staging"
+  #   environment: staging
+  #   if: needs.check-if-needs-deploying.outputs.is-cached != 'success'
+  #   needs: [check-if-needs-deploying]
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     deployments: write
 
-    steps:
-      - uses: actions/checkout@v3
-      - run: pnpm build
-        env:
-          VITE_API_URL: "http://localhost:3000"
-      - name: Publish
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ matrix.projectName }}
-          directory: ./apps/frontend/dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: pnpm build
+  #       env:
+  #         VITE_API_URL: "http://localhost:3000"
+  #     - name: Publish
+  #       uses: cloudflare/pages-action@1
+  #       with:
+  #         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  #         projectName: ${{ matrix.projectName }}
+  #         directory: ./apps/frontend/dist
+  #         gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 

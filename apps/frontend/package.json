@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint --max-warnings 0 --fix && tsc",
+    "lint": "eslint src --max-warnings 0 --fix",
+    "typecheck": "tsc --noEmit",
     "theme": "chakra-cli tokens src/domains/style/style.theme.ts",
     "preview": "vite preview"
   },
